@@ -1,0 +1,81 @@
+.techfont {
+  font-family: 'Russo One', sans-serif;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.bigbrand {
+  font-size: 1.5em;
+}
+
+.centerstage {
+  margin: 0 auto;
+}
+
+.postdate {
+  text-align: center;
+}
+
+.posttitle {
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.postcontent {
+  font-family: 'Montserrat';
+  font-size: 1em;
+}
+
+.btn-comment {
+  position: absolute;
+  right: 0;
+}
+
+.edit-el {
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .02);
+  height: 350px;
+}
+
+#output {
+  height: 500px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+#output:focus {
+  outline: none;
+}
+
+#output::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.form-label {
+  background-color: rgba(0, 0, 0, .01);
+  height: 40px;
+  position: relative;
+}
+
+.ctrl-btn {
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-color: transparent
+}
+
+.ctrl-btn:hover {
+  cursor: pointer;
+}
+
+.ctrl-btn:focus {
+  outline: none;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, .1);
+}

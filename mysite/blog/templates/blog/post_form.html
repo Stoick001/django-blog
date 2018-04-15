@@ -1,0 +1,52 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+  <h1>New Post</h1>
+  <form class="post-form" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-group">
+        <label class="form-label">{{field.label}}</label>
+        {{field}}
+      </div>
+    {% endfor %}
+
+    <button type="submit" class="save btn btn-default" name="button">Save</button>
+  </form>
+
+  <script>
+
+    document.querySelectorAll('.form-label')[2].innerHTML = '';
+
+    var ta = document.querySelector('.postcontent');
+    ta.style.display = "none";
+
+    ta.insertAdjacentHTML('afterend', '<div class="edit-el"></div>')
+
+    document.querySelector('.edit-el').innerHTML = ta.textContent;
+
+    Panagram.init({
+      controls: 'defaultControls',
+      ctrElement: document.querySelectorAll('.form-label')[2],
+      outElement: document.querySelector('.edit-el'),
+    });
+
+    var sep = 0;
+    document.querySelectorAll('.ctrl-btn').forEach(function(el) {
+      el.style.left = (4*sep++) + 'rem';
+    });
+
+    function escapeHtml(html) {
+      var text = document.createTextNode(html);
+      var div = document.createElement('div');
+      div.appendChild(text);
+      return div.innerHTML;
+    }
+
+    const code = ta;
+    document.querySelector('.edit-el').addEventListener('DOMSubtreeModified', function() {
+      code.innerHTML = escapeHtml(document.querySelector('.edit-el').innerHTML);
+    });
+
+  </script>
+{% endblock %}
